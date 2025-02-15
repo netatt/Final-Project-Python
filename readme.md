@@ -18,7 +18,7 @@ To get started with this project, clone the repository and set up a Python envir
 
 ### Step 1: Clone the repository
 
-git clone https://github.com/yourusername/fmri-analysis.git
+git clone https://github.com/netatt/Final-Project-Python.git
 
 ### Step 2: Install dependencies
 
