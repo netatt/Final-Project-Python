@@ -1,0 +1,61 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fmri_analysis"
+version = "0.1.0"
+description = "A modular fMRI analysis pipeline for preprocessing, masking, and statistical analyses."
+authors = [
+    { name = "Neta Thee"},
+    { name = "Orian Siani"}
+]
+
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "python",
+    "numpy",
+    "pandas",
+    "matplotlib",
+    "seaborn",
+    "scipy",
+    "nilearn",
+    "nibabel",
+    "pingouin",
+    "google-cloud-storage"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-cov",
+    "black",
+    "flake8",
+    "mypy",
+    "pre-commit"
+]
+
+[tool.setuptools]
+packages = ["fmri_analysis"]
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "--cov=fmri_analysis --cov-report=term-missing"
+testpaths = ["tests"]
+
+[tool.black]
+line-length = 88
+
+[tool.flake8]
+max-line-length = 88
+
+[tool.mypy]
+strict = true
+
+[tool.pre-commit]
+hooks = [
+    { id = "black" },
+    { id = "flake8" },
+    { id = "mypy" }
+]
